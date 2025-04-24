@@ -1,0 +1,33 @@
+.blankDiagram {
+    width: 1000px;
+    position: relative;
+    
+}
+
+.diagramContainer {
+    padding: 2rem 6rem;
+}
+
+.answerInput {
+    position: absolute;
+    transform: translate(-50%, -50%);
+
+    input {
+        text-align: center;
+        text-wrap: wrap;
+    }
+
+    &.temperatureInput {
+        transform: translate(0, -50%);
+
+        input {
+            width: 6rem;
+        }
+    }
+
+    &.carbonPercentageInput {
+        input {
+            width: 2rem;
+        }
+    }
+}
