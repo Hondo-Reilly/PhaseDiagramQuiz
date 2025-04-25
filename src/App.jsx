@@ -303,6 +303,7 @@ function App() {
   }
 
   const [quizSelections, setQuizSelections] = useState(getMountSelections());
+  const [quizGrade, setQuizGrade] = useState("");
 
   function handleQuizSubmit(){
     const correctSelections = {}
@@ -322,6 +323,14 @@ function App() {
       }
     }
 
+    let score = 0;
+    for (const key in quizSelections) {
+      if (quizSelections[key].correct === "correct") {
+        score++;  
+      }
+    }
+
+    setQuizGrade(score);
     setQuizSelections(newQuizSelections)
   }
 
@@ -340,6 +349,7 @@ function App() {
   }
   
   function handleResetQuiz(){
+    setQuizGrade("");
     setQuizSelections(getMountSelections())
   }
   function changeAnswerSelection(id, value){
@@ -401,9 +411,13 @@ function App() {
         ))}
 
       </div>
-      <button onClick={handleQuizSubmit}>Submit Quiz</button>
-      <button onClick={handleResetQuiz}>Reset Quiz</button>
-      <button onClick={handleShowAnswers}>Show Answers</button>
+
+      <div className={classes.buttonContainer}>
+        <button onClick={handleQuizSubmit}>Submit Quiz</button>
+        <button onClick={handleResetQuiz}>Reset Quiz</button>
+        <button onClick={handleShowAnswers}>Show Answers</button>
+        {quizGrade != "" && <p>Score: {quizGrade} / 41</p>}
+      </div>
     </>
   )
 }
