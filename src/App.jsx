@@ -377,7 +377,6 @@ function App() {
         <Arrow start={{ x: 227, y: 80 }} end={{ x: 205, y: 96 }} />
         <Arrow start={{ x: 163, y: 111 }} end={{ x: 192, y: 106 }} />
         <Arrow start={{ x: 246, y: 190 }} end={{ x: 204, y: 124 }} />
-
         
         {quizSelections != undefined && answerData.temperatures.map((answer) => (
           <AnswerInput answer={answer} key={answer.id} className={classes.temperatureInput} userQuizSelections={quizSelections} changeAnswerSelection={changeAnswerSelection}/>
@@ -447,8 +446,8 @@ function MajorLabelAnswerInput({ answer, className, allAnswers, userQuizSelectio
 function Arrow({ start, end}) {
   return (
     <svg width="100%" height="100%" style={{position: 'absolute', top: 0, left: 0, pointerEvents: 'none'}}>
-      <line x1={start.x} y1={start.y} x2={end.x} y2={end.y} stroke="black" strokeWidth="2"/>
-      <circle cx={end.x} cy={end.y} r="4" fill="black"/>
+      <line x1={start.x} y1={start.y} x2={end.x} y2={end.y} stroke="blue" strokeWidth="2"/>
+      <circle cx={end.x} cy={end.y} r="4" fill="blue"/>
     </svg>
   )
 }
