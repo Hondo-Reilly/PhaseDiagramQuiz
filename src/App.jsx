@@ -1,4 +1,5 @@
 import blankDiagram from './assets/blank_diagram.png'
+import craigDiagram from './assets/craig.jpg'
 import classes from './css/app.module.css'
 import { useState, useEffect } from 'react'
 
@@ -363,6 +364,7 @@ function App() {
     <>
       <div className={classes.diagramContainer} onMouseMove={handleMouseMove}>
         <img src={blankDiagram} alt="blank diagram" className={classes.blankDiagram} />
+        <img src={craigDiagram} alt="craig diagram" className={classes.craigDiagram} />
 
         <Arrow start={{ x: 274, y: 395 }} end={{ x: 220, y: 443 }} />
         <Arrow start={{ x: 230, y: 525 }} end={{ x: 195, y: 500 }} />

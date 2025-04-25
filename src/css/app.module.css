@@ -8,6 +8,16 @@
     padding: 2rem 6rem;
 }
 
+.craigDiagram {
+    position: absolute;
+    width: 800px;
+    height: 800px;
+    top: -100px;
+    left: 200px;
+    opacity: 0.1;
+    object-fit: contain;
+}
+
 .answerInput {
     position: absolute;
     transform: translate(-50%, -50%);
