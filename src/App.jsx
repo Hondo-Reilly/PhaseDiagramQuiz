@@ -4,6 +4,8 @@ import classes from './css/app.module.css'
 import { useState, useEffect } from 'react'
 
 function App() {
+  const [submissionCount, setSubmissionCount] = useState(0);
+
   const answerData = {
     temperatures: [
       {
@@ -306,6 +308,8 @@ function App() {
   const [quizGrade, setQuizGrade] = useState("");
 
   function handleQuizSubmit(){
+    setSubmissionCount(a => a + 1);
+
     const correctSelections = {}
     const newQuizSelections = {...quizSelections}
     for (const key in answerData) {
@@ -374,7 +378,7 @@ function App() {
     <>
       <div className={classes.diagramContainer} onMouseMove={handleMouseMove}>
         <img src={blankDiagram} alt="blank diagram" className={classes.blankDiagram} />
-        <img src={craigDiagram} alt="craig diagram" className={classes.craigDiagram} />
+        <img src={craigDiagram} alt="craig diagram" className={classes.craigDiagram} style={{opacity: submissionCount * 0.0025}}/>
 
         <Arrow start={{ x: 274, y: 395 }} end={{ x: 220, y: 443 }} />
         <Arrow start={{ x: 230, y: 525 }} end={{ x: 195, y: 500 }} />
